@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="estilos.css">
+   
+    
+    <title>Formulario de Preços</title>
+</head>
+<body>
+    <section class="cabecalho">
+        <h1>Formulário de Preços</h1>
+    </section>
+    <section class="conteiner-main">
+        <div id="container-formulario" class="hidden">
+            <form class="formulario" action="">
+                <div class="form-id hidden">
+                    <label for="">ID: </label>
+                    <input type="text" name="ID" id="ID" readonly >
+                </div>
+                <div class="form-descricao">
+                    
+                        <label for="">Produto: </label>
+                        <input type="" name="produto" id="produto" required>
+                    
+                        <label for="">Descricao: </label>
+                        <input type="text" name="descricao" id="descricao" required>
+                    
+                </div>
+                <div class="form-numeros">
+                                               
+                        <div>
+                            <label for="">Preço R$: </label>
+                            <input type="number" name="preco" id="preco" min="0" step="0.01" placeholder="0.00" required>
+                    
+                        </div>
+                        
+                </div>
+                <div class="botao">
+                    <button type="submit">Cadastrar</button>
+                    <button id="botao-voltar" type="button"> Voltar</button>
+                </div>
+                
+
+            </form>
+        </div>
+    </section>
+
+    
+</body>
+
+ <script src="script.js" defer></script>
+</html>

@@ -1,0 +1,281 @@
+:root {
+    --azul-fundo: #1a2a6c;
+    --azul-destaque: #3a50e4;
+    --branco-gelo: #f8f9fa;
+}
+
+/* 1. RESET E BASE */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: var(--azul-fundo);
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. CABEÇALHO E BOTÕES DE MENU */
+.cabecalho {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    background-color: var(--azul-destaque);
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.botao-formulario, 
+.botao-buscar {
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--azul-fundo);
+    background-color: var(--branco-gelo);
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.botao-formulario:hover, 
+.botao-buscar:hover {
+    background-color: var(--azul-destaque);
+    color: white;
+}
+
+/* 3. CARD DO FORMULÁRIO */
+.formulario {
+    background-color: var(--branco-gelo);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--azul-fundo);
+}
+
+.formulario label {
+    background-color: var(--azul-destaque);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.formulario input {
+    width: 100%;
+    height: 40px;
+    border: 2px solid var(--azul-fundo);
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.form-numeros {
+    display: flex;
+    gap: 15px;
+}
+
+.botao {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.botao button {
+    flex: 1;
+    height: 45px;
+    background-color: var(--azul-fundo);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* 4. BUSCADOR (INPUT E BOTÕES LADO A LADO) */
+.form-buscador {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#busca-id {
+    height: 45px;
+    width: 250px;
+    padding: 0 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.botao-form-buscador, 
+.botao-form-buscador-voltar,
+.form-buscador button {
+    height: 45px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--azul-fundo);
+    background-color: var(--branco-gelo);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+}
+
+/* 5. TABELA COM BOTÕES + E - */
+.container-tabela {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+td {
+    background-color: var(--branco-gelo);
+    color: var(--azul-fundo);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+}
+
+.btn-mais, .btn-menos {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 5px;
+    color: white;
+}
+
+.btn-mais { background-color: #28a745; }
+.btn-menos { background-color: #dc3545; }
+
+/* 6. MOBILE SIMPLES (SEM CAGAR O LAYOUT) */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste de Botões Principais */
+    .botao-formulario, .botao-buscar {
+        width: 90%;
+        height: 55px;
+        margin: 8px auto;
+        font-size: 16px;
+    }
+
+    /* 2. Formulário de Cadastro e Busca */
+    .formulario, .form-buscador {
+        width: 92% !important;
+        padding: 20px;
+        border-radius: 24px;
+        flex-direction: column !important;
+    }
+
+    #busca-id {
+        width: 100% !important;
+        margin-bottom: 10px;
+        border: 2px solid var(--azul-destaque);
+    }
+
+    /* 3. Estilo de Cards de Resultado da Busca */
+    .container-resultado-cards {
+        width: 92%;
+        margin-top: 20px;
+    }
+
+    .container-resultado-cards div {
+        width: 100% !important;
+        margin: 5px 0 !important;
+        padding: 18px !important;
+        background: linear-gradient(145deg, #ffffff, #f0f0f0) !important;
+        border-left: 6px solid var(--azul-destaque) !important;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 4. Transformar Tabela em Cards Modernos (Sem quebrar a estrutura) */
+    thead { display: none; } /* Esconde o cabeçalho chato no celular */
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        background: var(--branco-gelo);
+        margin-bottom: 25px;
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    td {
+        background: transparent;
+        box-shadow: none;
+        text-align: right;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+
+    /* Adiciona Labels automáticas para os dados na tabela sem mexer no HTML */
+    td:nth-of-type(1):before { content: "ID"; opacity: 0.6; }
+    td:nth-of-type(2):before { content: "Produto"; opacity: 0.6; }
+    td:nth-of-type(3):before { content: "Descrição"; opacity: 0.6; }
+    td:nth-of-type(4):before { content: "Preço"; opacity: 0.6; }
+    td:nth-of-type(5):before { content: "Estoque"; opacity: 0.6; }
+    td:nth-of-type(6):before { content: "Ações"; opacity: 0.6; }
+
+    td:last-child {
+        border-bottom: none;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    /* Botões de + e - Maiores para o dedo não errar */
+    .btn-mais, .btn-menos {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        margin: 0 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+}
+
+.hidden { display: none; }
